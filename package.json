@@ -1,0 +1,22 @@
+{
+  "name": "test",
+  "version": "0.0.1",
+  "description": "A sample Node.js and Object Storage app for Bluemix",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "http": "*",
+    "routes": "*",
+    "busboy": "*",
+    "stream": "*",
+    "crypto": "*",
+    "util": "*",
+    "request": "^2.53.0",
+    "url":"*"
+    },
+  "engines": {
+    "node": "0.10.*"
+  },
+  "repository": {}
+}
