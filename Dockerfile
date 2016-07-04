@@ -1,4 +1,4 @@
-FROM registry.ng.bluemix.net/ibmnode:latest
+FROM registry.eu-gb.bluemix.net/ibmnode:latest
 RUN mkdir /var/www
 VOLUME /var/www/
 RUN mkdir /myapp
