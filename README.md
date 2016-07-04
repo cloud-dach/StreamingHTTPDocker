@@ -5,6 +5,8 @@ http://schempy.com/2015/03/11/streaming_file_uploads_with_nodejs/
 ## Local Test
 clone repo and build and test the Docker Image locally  
 ```bash
+git clone https://github.com/cloud-dach/StreamingHTTPDocker.git
+cd StreamingHTTPDocker
 docker build -t "streaminghttpdocker" .  
 docker run -d -p 8000 -v /var/www:/var/www streaminghttpdocker  
 ```
