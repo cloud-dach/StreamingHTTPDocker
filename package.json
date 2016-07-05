@@ -1,22 +1,21 @@
 {
   "name": "test",
   "version": "0.0.1",
-  "description": "A sample Node.js and Object Storage app for Bluemix",
+  "description": "HTTP Multipart up and download example with filebrowser",
   "scripts": {
     "start": "node app.js"
   },
-  "dependencies": {
-    "http": "*",
-    "routes": "*",
-    "busboy": "*",
-    "stream": "*",
-    "crypto": "*",
-    "util": "*",
-    "request": "^2.53.0",
-    "url":"*"
-    },
-  "engines": {
-    "node": "0.10.*"
-  },
-  "repository": {}
+  "dependencies": {},
+  "repository": {},
+  "devDependencies": {
+    "busboy": "^0.2.13",
+    "connect-busboy": "0.0.2",
+    "express": "^4.14.0",
+    "fs": "0.0.2",
+    "http": "0.0.0",
+    "mime-type": "^3.0.4",
+    "path": "^0.12.7",
+    "request": "^2.72.0",
+    "url": "^0.11.0"
+  }
 }
