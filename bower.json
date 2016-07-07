@@ -1,0 +1,26 @@
+{
+  "name": "test",
+  "description": "HTTP Multipart up and download example with filebrowser",
+  "main": "",
+  "authors": [
+    "Rene Meyer <rene.meyer@de.ibm.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/cloud-dach/StreamingHTTPDocker",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2.2.4",
+    "angular": "^1.5.7",
+    "angular-route": "^1.5.7",
+    "bootstrap": "^3.3.6",
+    "jsTree-directive": "jstree-directive#^0.1.5",
+    "jstree": "^3.3.1"
+  }
+}
