@@ -18,5 +18,7 @@ COPY ./start.sh /myapp/
 
 WORKDIR /myapp
 RUN npm install
+RUN npm install -g bower
+RUN bower install
 EXPOSE 8000
 CMD ["./start.sh"]
