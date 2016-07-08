@@ -14,7 +14,7 @@ var app = express();
 var routes = require('./routes.js');
 
 
-var globalpath = '/var/www';
+var globalpath = '/var/www/';
 var port = 8000;
 
 
