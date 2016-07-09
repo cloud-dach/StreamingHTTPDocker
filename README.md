@@ -11,7 +11,7 @@ clone repo and build and test the Docker Image locally
 git clone https://github.com/cloud-dach/StreamingHTTPDocker.git
 cd StreamingHTTPDocker
 docker build -t "streaminghttpdocker" .  
-docker run -d -p 8000 -v /var/www:/var/www streaminghttpdocker  
+docker run -d -p 8000:8000 -v /var/www:/var/www streaminghttpdocker  
 ```
 test the multipart upload with curl  
 ```bash
