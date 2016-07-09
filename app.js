@@ -37,7 +37,7 @@ server.listen(port);
 // http://stackoverflow.com/questions/23691194/node-express-file-upload
 app.route('/upload')
     .post(function (req, res, next) {
-
+        console.log('somebody uploading');
         var fstream;
         req.pipe(req.busboy);
         req.busboy.on('file', function (fieldname, file, filename) {

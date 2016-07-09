@@ -10,7 +10,11 @@
     </div>
     <div class="col-md-8 file-viewer">
       <pre><code>{{fileViewer}}</pre></code>
+      <!-- <input class="btn btn-primary" type="file" file-model="myFile"/> -->
+      <label class="btn btn-default btn-file">
+          Browse <input type="file" file-model="myFile" >
+      </label>
+      <button class="btn btn-primary" ng-click="uploadFile()">upload me</button>
     </div>
   </div>
-
 </div>

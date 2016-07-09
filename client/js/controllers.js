@@ -1,9 +1,19 @@
 (function() {
   'use strict';
 
-  app.controller('HomeCtrl', ['$scope', 'FetchFileFactory','$location',
-    function($scope, FetchFileFactory,$location) {
-      $scope.fileViewer = 'Please select a file to download';
+  app.controller('HomeCtrl', ['$scope', 'FetchFileFactory','$location','fileUpload',
+    function($scope, FetchFileFactory,$location,fileUpload) {
+      $scope.uploadFile = function(){
+        var file = $scope.myFile;
+        console.log('file is ' );
+        console.dir(file);
+        var uploadUrl = $location.absUrl(); // will tell you the current path
+        uploadUrl = uploadUrl.substr(0, uploadUrl.length - 2);
+        uploadUrl = uploadUrl + 'upload';
+        console.log(uploadUrl);
+        fileUpload.uploadFileToUrl(file, uploadUrl);
+    };
+    $scope.fileViewer = 'Please select a file to download';
       $scope.nodeSelected = function(e, data) {
         var _l = data.node.li_attr;
         if (_l.isLeaf) {

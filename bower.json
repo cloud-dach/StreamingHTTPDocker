@@ -3,7 +3,7 @@
   "description": "HTTP Multipart up and download example with filebrowser",
   "main": "",
   "authors": [
-    "Rene Meyer <rene.meyer@de.ibm.com>"
+    "Rene Meyer"
   ],
   "license": "MIT",
   "homepage": "https://github.com/cloud-dach/StreamingHTTPDocker",
