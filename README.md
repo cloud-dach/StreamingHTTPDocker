@@ -1,7 +1,10 @@
 # Streaming Node.js HTTP Down- and Upload Example in Docker Container
 A simple Node.js HTTP multipart scalable download/upload file server, running in a Docker Container or on IBM Bluemix Container Service using Docker volumes.<br />
-The upload part is utilizing an example from that blog article using busboy:  
-http://schempy.com/2015/03/11/streaming_file_uploads_with_nodejs/
+I added a Angular Webapplication to list files and test the upload and download from the Browser as well, this is based on the following examples and articles:
+http://thejackalofjavascript.com/file-browser-with-jstree-angularjs-and-expressjs/
+http://stackoverflow.com/questions/26009452/uploading-files-using-angularjs
+https://jsfiddle.net/JeJenny/ZG9re/
+
 ## Local Test
 clone repo and build and test the Docker Image locally  
 ```bash
@@ -49,7 +52,7 @@ curl -i -X POST -H "Content-Type: multipart/form-data" -F "data=@filename" https
 ```
 Test the multipart download with wget  
 ```bash
-wget https://[YOURHOST].eu-gb.mybluemix.net/upload/download/filename  
+wget https://[YOURHOST].eu-gb.mybluemix.net/download/filename  
 ```
 Now you can store and retrieve files in sclabale way using Docker and Node.js.
 
