@@ -14,9 +14,8 @@ COPY ./package.json /myapp/
 COPY ./routes.js /myapp/
 
 WORKDIR /myapp
-
-RUN apk add --update nodejs git && npm install && npm install -g bower && bower install
-
+# sqeeze to 32 MByte
+RUN apk add --update nodejs git && npm install && npm install -g bower && bower install && rm -rf /usr/lib/node_modules && apk del git && rm -rf /root
 EXPOSE 8000
 
 CMD ["node", "/myapp/app.js"]
