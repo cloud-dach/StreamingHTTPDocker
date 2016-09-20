@@ -2,8 +2,8 @@
 FROM alpine:3.4
 
 RUN mkdir /myapp/ && mkdir /myapp/client && mkdir /myapp/views && mkdir /var/www
-
-VOLUME /var/www/
+# we map the volume outside
+# VOLUME /var/www/
 
 COPY ./client /myapp/client
 COPY ./views /myapp/views
