@@ -6,12 +6,17 @@ http://stackoverflow.com/questions/26009452/uploading-files-using-angularjs
 https://jsfiddle.net/JeJenny/ZG9re/   
 
 ## Local Test
-clone repo and build and test the Docker Image locally  
+clone repo and build and test the Docker Image locally
+_NOTE:_  
+
+1. In this sample **"./"** represents the actual path as parameter.
+2. If **/var/www** does not exist create the folder **www** and add private/var/www
+
 ```bash
 git clone https://github.com/cloud-dach/StreamingHTTPDocker.git
 cd StreamingHTTPDocker
-docker build -t "streaminghttpdocker" .  
-docker run -d -p 8000:8000 -v /var/www:/var/www streaminghttpdocker  
+docker build -t "streaminghttpdocker" ./  
+docker run -d -p 8000:8000 -v /private/var/www:/private/var/www streaminghttpdocker  
 ```
 test the multipart upload with curl  
 ```bash
@@ -27,9 +32,13 @@ http://localhost:8000/
 ```
 
 ## Running it on IBM Bluemix using Container Scalabale Group
+_NOTE:_ To use cf **ic** you need to install **cf install-plugin https://static-ice.ng.bluemix.net/ibm-containers-mac**
+More details in https://console.ng.bluemix.net/docs/containers/container_cli_cfic_install.html .
+
 do a cf login and cf ic init
 ```bash
-cf login  ... 
+cf login  ...
+cf ic namespace set YOURBLUEMIXNAMESPACE
 cf ic init ...
 ```
 tag local image in your remote registry on Bluemix  
@@ -51,7 +60,7 @@ Please adopt your Bluemix region domains!
 ```bash
 cf ic group create -p 8000 -m 256 -v [YOURVOLUME]:/var/www  --min 2 --auto --hostname [YOURHOST] -d eu-gb.mybluemix.net --name mygroup registry.eu-gb.bluemix.net/[YOURBLUEMIXNAMESPACE]/streaminghttpdocker:latest
 ```
-Now you can test the multipart upload with curl on Bluemix 
+Now you can test the multipart upload with curl on Bluemix
 ```bash
 curl -i -X POST -H "Content-Type: multipart/form-data" -F "data=@filename" https://[YOURHOST].eu-gb.mybluemix.net/upload  
 ```
@@ -60,4 +69,3 @@ Test the multipart download with wget
 wget https://[YOURHOST].eu-gb.mybluemix.net/download/filename  
 ```
 Now you can store and retrieve files in sclabale way using Docker and Node.js.
-
